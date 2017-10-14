@@ -54,7 +54,7 @@ public class DemoApplicationTests {
 		user.setId(1L);
 		user.setBirthDate(subtractDays(new Date(), -10));
 		user.setPinCode(63672);
-		ResponseEntity<IntelectResponse> response = restTemplate.postForEntity( "http://localhost:8080/user/create", user , IntelectResponse.class );
+		ResponseEntity<IntelectResponse> response = restTemplate.postForEntity( "http://localhost:8080/user/update", user , IntelectResponse.class );
 		
 				Assert.assertTrue("User Updated Success", (response.getBody().getValErrors().isEmpty() && response.getBody().getUserId() != null));
 		
